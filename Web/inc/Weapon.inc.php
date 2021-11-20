@@ -1,0 +1,14 @@
+<option value="1">大剣</option>
+<option value="2">太刀</option>
+<option value="3">片手剣</option>
+<option value="4">双剣</option>
+<option value="5">ハンマー</option>
+<option value="6">狩猟笛</option>
+<option value="7">ランス</option>
+<option value="8">ガンランス</option>
+<option value="9">スラアク</option>
+<option value="10">チャアク</option>
+<option value="11">操虫棍</option>
+<option value="12">弓</option>
+<option value="13">ライト</option>
+<option value="14">ヘビィ</option>
