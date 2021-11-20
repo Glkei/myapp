@@ -119,6 +119,9 @@ function loginUser($conn,$username,$pwd){
     }
 }
 
+
+//GETLIST
+
 function getList($conn,$sql){
    if(!$conn){
        echo "Filed";
@@ -173,3 +176,39 @@ function UploadTA( $conn,$content_path,$hunterName,$timeAt,$title,$comment,$Play
     exit();
 
 } 
+
+//upDef
+
+function emptyInputUpDef($content_path,$title){
+    $result = null;
+    if(empty($content_path) ||  empty($title) ){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+
+function UploadDef( $conn,$content_path,$title,$ditails ){
+    if(!$conn){
+        echo "Filed";
+        header("location: ../uploadDef.php?error=canotconnectit");
+        exit();
+    }
+
+    $query=
+    "INSERT 
+    INTO `uploads_Def`(`Content`, `Title`, `Ditails`) 
+    VALUES ( '".$content_path."','".$title."','".$ditails."' );";
+     
+    $result = mysqli_query($conn,$query);
+
+    if(!$result){
+        header("location: ../uploadDef.php?error=queryerror");
+        exit();
+    }
+
+    header("location: ../uploadDef.php?error=none");
+    exit();
+}

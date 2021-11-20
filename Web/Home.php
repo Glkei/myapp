@@ -1,6 +1,12 @@
 <?php
   require_once 'template/header.php';
-?>
+  require_once 'inc/dbh.inc.php';
+  require_once 'inc/functions.inc.php';
+  $data = array();
+  $sql = "SELECT * FROM `uploads_def` ORDER BY RAND() "; 
+  $data = getList($conn,$sql);
+  $num = 0;
+  ?>
 <head>
 <link rel=stylesheet href="css/style.css">
 </head>
@@ -27,22 +33,23 @@
                 <h1 style="text-align: center;color:#ffffff">投稿された画像</h1>
                 <div class="image-container">
                    <ul class=" img-wrapper">
-                     <li><a href="#"><img src="img/Home/taki.jpg" alt=""></a ></li>
-                     <li><a href="#"><img src="img/Home/taki.jpg" alt=""></a ></li>
-                     <li><a href="#"><img src="img/Home/taki.jpg" alt=""></a ></li>
-                     <li><a href="#"><img src="img/Home/otomo.jpg" alt=""></a></li>
-                     <li><a href="#"><img src="img/Home/taki.jpg" alt=""></a ></li>
-                     <li><a href="#"><img src="img/Home/LOGO.png" alt=""></a ></li>
-                     <li><a href="#"><img src="img/MHICON/アオアシラ.gif" alt=""></a ></li>
-                     <li><a href="#"><img src="img/MHICON/アカムトルム.PNG" alt=""></a ></li>
-                     <li><a href="#"><img src="img/MHICON/アカムトルム.PNG" alt=""></a ></li>
-                     <li><a href="#"><img src="img/MHICON/アカムトルム.PNG" alt=""></a ></li>
-                    <li><a href="#"><img src="img/Home/eeee.jfif" alt=""></a ></li>
-                   </ul>
+
+                    <?php foreach($data as $val):?>
+
+                     <li><a href="#"><img src="<?php echo $val["Content"] ?>" alt=""></a ></li>
+                   
+                    <?php endforeach; ?>
+
+                    </ul>
                 </div>
             </div>
 
-            <div class="Sponcer-right"></div>
+            <div class="Sponcer-right">
+
+                <button><a href="uploadDef.php">投稿する</a></button>
+
+            </div>
+        
         </main>
         <!-- <footer class="footer-box"></footer> -->
  <?php

@@ -192,13 +192,11 @@ body{
 }
 
 .image-container {
-    /* display:flex; */
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     max-height:1000px;
     width: 100%;
-    /* background-color:aliceblue; */
 
 }
 
@@ -210,6 +208,7 @@ body{
 }
 
 .image-container img{
+    display:inline;
     padding-right:10px;
     width:auto;
     max-height:250px;
