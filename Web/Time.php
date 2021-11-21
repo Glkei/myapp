@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
     <link rel=stylesheet href="css/Time.css">
 </haad>
-        <!-- <div class="back-image"></div> -->
         <main>
             <div class="center-left">
                 <div class="CL-box">

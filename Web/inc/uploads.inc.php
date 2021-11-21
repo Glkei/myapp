@@ -18,10 +18,10 @@ if(isset($_POST["submit"])){
         
         //拡張子を確認して条件分岐
         if($extension == 'jpg' || 'png'){
-            $ContentDir = 'Uploaded/img';//..imgディレクトリ指定
+            $ContentDir = 'Uploaded/.ta/img';//..imgディレクトリ指定
         }
         elseif($extension == 'mp4' || 'mov' || 'mpg' || 'mkv' || 'avi' || 'webm' ){
-            $ContentDir = 'Uploaded/mov/';//..movディレクトリ指定
+            $ContentDir = 'Uploaded/.ta/mov';//..movディレクトリ指定
         }
         else{
             header("location: ../upload.php?error=nosupportcontent");

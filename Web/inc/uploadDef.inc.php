@@ -18,10 +18,7 @@ if(isset($_POST["submit"])){
         
         //拡張子を確認して条件分岐
         if($extension == 'jpg' || 'png'){
-            $ContentDir = 'Uploaded/img';//..imgディレクトリ指定
-        }
-        elseif($extension == 'mp4' || 'mov' || 'mpg' || 'mkv' || 'avi' || 'webm' ){
-            $ContentDir = 'Uploaded/mov/';//..movディレクトリ指定
+            $ContentDir = 'Uploaded/.def/img';//..imgディレクトリ指定
         }
         else{
             header("location: ../uploadDef.php?error=nosupportcontent");
@@ -46,7 +43,7 @@ if(isset($_POST["submit"])){
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
-    if(emptyInputUpDef($content_path,$title) !== false){
+    if(emptyInputDef($content_path,$title) !== false){
         header("location: ../uploadDef.php?error=emptyInput");
         exit();
     }

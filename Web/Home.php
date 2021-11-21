@@ -6,27 +6,31 @@
   $sql = "SELECT * FROM `uploads_def` ORDER BY RAND() "; 
   $data = getList($conn,$sql);
   $num = 0;
-  ?>
+?>
 <head>
+<title>かさねぎ.com【モンハン】重ね着、画像集！！モンハンライズ</title>
 <link rel=stylesheet href="css/style.css">
 </head>
-        <div class="tags-container wf-sans">
-            <ul class="add-tag">
-                <!--後々追加予定-->
-                <li><a href="" id="#">かっこいい<span></span></a></li>
-                <li><a href="" id="#">かわいい<span></span></a></li>
-                <li><a href="" id="#">MH-XX<span></span></a></li>
-                <li><a href="" id="#">おもしろ系<span></span></a></li>
-                <li><a href="" id="#">女性キャラ<span></span></a></li>
-                <li><a href="" id="#">男性キャラ<span></span></a></li>
-                <li><a href="" id="#">MH-WI<span></span></a></li>
-                <li><a href="" id="#">重ね着<span></span></a></li>
-                <li><a href="" id="#">MH-Rise<span></span></a></li>
-                <li><a href="" id="#">セクシー<span></span></a></li>
-                <li><a href="" id="#">ネタ枠<span></span></a></li>
-            </ul>
-        </div>
+        
+            <div class="tags-container wf-sans">
+                <ul class="add-tag">
+                    <!--後々追加予定-->
+                    <li><a href="" id="#">かっこいい<span></span></a></li>
+                    <li><a href="" id="#">かわいい<span></span></a></li>
+                    <li><a href="" id="#">MH-XX<span></span></a></li>
+                    <li><a href="" id="#">おもしろ系<span></span></a></li>
+                    <li><a href="" id="#">女性キャラ<span></span></a></li>
+                    <li><a href="" id="#">男性キャラ<span></span></a></li>
+                    <li><a href="" id="#">MH-WI<span></span></a></li>
+                    <li><a href="" id="#">重ね着<span></span></a></li>
+                    <li><a href="" id="#">MH-Rise<span></span></a></li>
+                    <li><a href="" id="#">セクシー<span></span></a></li>
+                    <li><a href="" id="#">ネタ枠<span></span></a></li>
+                </ul>
+            </div>
+
         <main class="center-box">
+
             <div class="Sponcer-left"></div>
             <!--center-->
             <div class="center-center-box">

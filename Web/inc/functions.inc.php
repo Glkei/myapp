@@ -179,7 +179,7 @@ function UploadTA( $conn,$content_path,$hunterName,$timeAt,$title,$comment,$Play
 
 //upDef
 
-function emptyInputUpDef($content_path,$title){
+function emptyInputDef($content_path,$title){
     $result = null;
     if(empty($content_path) ||  empty($title) ){
         $result = true;
@@ -210,5 +210,79 @@ function UploadDef( $conn,$content_path,$title,$ditails ){
     }
 
     header("location: ../uploadDef.php?error=none");
+    exit();
+}
+
+//COntact編
+
+function emptyInputContact($name,$email,$purpose,$ditails){
+    $result = null;
+    if( empty($name) ||  empty($email) ||  empty($purpose) ||  empty($ditails) ){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+
+function SendContact( $conn,$name,$email,$purpose,$ditails ){
+    if(!$conn){
+        echo "Filed";
+        header("location: ../Admin/Contact.php?error=canotconnectit");
+        exit();
+    }
+
+    $query=
+    "INSERT 
+    INTO `contact`(`name`, `email`, `purpose` ,`ditails`) 
+    VALUES ( '".$name."','".$email."','".$purpose."','".$ditails."' );";
+     
+    $result = mysqli_query($conn,$query);
+
+    if(!$result){
+        header("location: ../Admin/Contact.php?error=queryerror");
+        exit();
+    }
+
+    header("location: ../Admin/Contact.php?error=none");
+    exit();
+}
+
+
+
+//uploadTalk.php編
+
+function emptyInputTalk($content_path,$title){
+    $result = null;
+    if(empty($content_path) ||  empty($title) ){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+
+function UploadTalk( $conn,$content_path,$title,$ditails ){
+    if(!$conn){
+        echo "Filed";
+        header("location: ../uploadTalk.php?error=canotconnectit");
+        exit();
+    }
+
+    $query=
+    "INSERT 
+    INTO `uploads_talk`(`Content`, `Title`, `Ditails`) 
+    VALUES ( '".$content_path."','".$title."','".$ditails."' );";
+     
+    $result = mysqli_query($conn,$query);
+
+    if(!$result){
+        header("location: ../uploadTalk.php?error=queryerror");
+        exit();
+    }
+
+    header("location: ../uploadTalk.php?error=none");
     exit();
 }

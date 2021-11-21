@@ -12,7 +12,7 @@
 </head>
 
 <section>
-    <div class="up-form">uploadDef.inc.php
+    <div class="up-form">
         <form method="POST" action ="inc/uploadDef.inc.php" autocomplete="off" enctype="multipart/form-data">
 
         <!-- name="content" -->

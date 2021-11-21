@@ -48,27 +48,34 @@
                 <img src="../img/SEND-ICON.png" class="form-icon"></img>
             </div>
             <div class="right-side ">
-             <form class="write-something">
+
+             <form class="write-something" action="../inc/Contact.inc.php" method="POST">
+
                 <h3 class="wrap-input" style="font-size: 30px;">お問い合わせフォーム</h3>
-                <div class="wrap-input"><input class="iS" type="text" id=1 placeholder=" name" required></div>
-                <div class="wrap-input"><input class="iS" type="email" id=2 placeholder=" Email" required></div>
+                <div class="wrap-input"><input class="iS" type="text" id=1 placeholder=" name"  name="name"></div>
+                <div class="wrap-input"><input class="iS" type="email" id=2 placeholder=" Email"  name="email"></div>
+
                 <div class="wrap-input">
-                <select name="" class="iS" required>
-                  <option hidden>連絡の要件</option>
-                  <option value="">本サイトでの新機能提案</option>
-                  <option value="">削除依頼</option>
-                  <option value="">その他お問い合わせ</option>
-                </select>
+                    <select name="purpose" class="iS" >
+                      <option hidden>連絡の要件</option>
+                      <option value="1">本サイトでの新機能提案</option>
+                      <option value="2">削除依頼</option>
+                      <option value="3">その他お問い合わせ</option>
+                    </select>
                 </div>
-                <div class="wrap-input"><textarea rows="10" cols="60" 
+
+                <div class="wrap-input">
+                    <textarea rows="10" cols="60" 
                     placeholder="お問い合わせ内容" style="font-size: 20px" 
-                    required></textarea></div>
-                <div class="submit"><input type="submit" value="送信"></div>
+                    required name="ditails"></textarea></div>
+                <div class="submit"><input type="submit" name="submit" value="送信"></div>
+
              </form>
+
             </div>
         </div>
     </main>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
   require_once '../template/footer.php';
 ?>
