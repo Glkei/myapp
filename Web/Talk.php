@@ -1,5 +1,11 @@
 <?php
   require_once 'template/header.php';
+  require_once 'inc/functions.inc.php';
+  require_once 'inc/dbh.inc.php';
+  $data = array();
+  $sql = "SELECT * FROM `uploads_talk` ORDER BY RAND() "; 
+  $data = getList($conn,$sql);
+  $num = 0;
 ?>
 <!--HTML Code-->
 
@@ -9,21 +15,34 @@
 </head>
 
 <section class="main">
- <div class="left-box">
 
-    <a href="uploadTalk.php">投稿する</a>
+   <div class="left-box">
+      <a href="uploadTalk.php">投稿する</a>
+   </div>
 
- </div>
- <div class="main-box">
+   <div class="main-box">
+         <?php foreach($data as $val):?>
+            <div class="data-container">
 
-    <?php ?>
+               <div class="con-left">
+                  <img src = "<?php echo $val["Content"]; ?>" width="auto" height="200px">
+               </div>
 
- </div>
- <div class="right-box">
+               <div class="con-right">
+                  <a href=""><h2><?php echo $val["Title"]; ?></h2></a>
+                  <label><?php echo $val["Ditails"]; ?></label>
+               </div>
 
-    <?php ?>
+            </div>
+         <?php endforeach; ?>         
+   </div>
 
- </div>
+   <div class="right-box">
+
+      <?php ?>
+   
+   </div>
+
 </section>
 
 

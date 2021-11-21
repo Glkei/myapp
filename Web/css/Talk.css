@@ -110,9 +110,33 @@ body {
 }
 
 .main-box{
+    z-index: 222;
+    background: cornsilk;
     flex:4;
 }
 
 .right-box{
     flex:2;
+}
+
+.data-container{
+    display: flex;
+}
+
+.con-left{
+    flex:1;
+}
+
+.con-right{
+    flex:2;
+}
+
+.con-right > h2{
+    width: 100px; 
+}
+
+.con-right > label{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
 }
