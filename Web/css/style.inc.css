@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'MH-font';
+    src: 
+    url('../font/Monserhunterfonts4type-Regular.otf')
+    format('woff');
+}
+
+
+
+.wf-nav{
+    font-family:'MH-font';
+    color:white;
+}
+
+.re{
+    font-family:'MH-font';
+    color: red;
+}
+
+.wf-en{
+    font-family: 'Roboto', sans-serif;
+    color:#ffffff;
+}
+
+body{
+    background: #1f222b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	margin: -20px 0 50px;
+}
+
+.container{
+    margin-left:auto;
+    margin-right: auto;
+    width: 100%;
+    height: 2940px;
+}
+
+.header-box{
+    display: flex;/*New*/
+    flex-direction: column;/*New*/
+    margin-right:auto;
+    margin-left:auto;
+    width: 100%;
+    height: 140px;
+    background-color:#333/* rgb(245, 181, 128)*/; 
+    /* position: fixed; */
+}
+
+.header-top-box{
+    display: flex;
+    flex: 2;/*New*元100px*/
+    /* background-color: blanchedalmond; */
+}
+
+.header-left{
+    padding-left:100px;
+    padding-top:40px;
+    flex:1;
+}   
+
+
+.header-right{
+    flex:3;
+    padding-right:50px;
+    padding-top: 50px;;
+}
+
+.nav-wrapper {
+    display: flex;
+    padding-left:50px;
+    margin-top:20px;
+    list-style: none;
+}
+
+.nav-wrapper li{/*navigation-幅指定*/
+    padding-left:75px;
+}
+
+.nav-wrapper a{
+    /* display: inline; */
+    max-width: 1500px;
+    font-size: 30px;
+    list-style-type:none;
+    text-decoration:none;
+}
+
+.nav-wrapper a:hover{
+    color:aquamarine;
+   
+}

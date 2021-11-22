@@ -34,7 +34,7 @@
             <div class="Sponcer-left"></div>
             <!--center-->
             <div class="center-center-box">
-                <h1 style="text-align: center;color:#ffffff">投稿された画像</h1>
+                <h1 style="text-align: center;color:#ffffff ;">投稿された画像</h1>
                 <div class="image-container">
                    <ul class=" img-wrapper">
 
