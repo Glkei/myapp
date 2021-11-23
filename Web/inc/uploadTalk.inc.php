@@ -20,9 +20,6 @@ if(isset($_POST["submit"])){
         if($extension == 'jpg' || 'png'){
             $ContentDir = 'Uploaded/.talk/img';//..imgディレクトリ指定
         }
-        elseif($extension == 'mp4' || 'mov' || 'mpg' || 'mkv' || 'avi' || 'webm' ){
-            $ContentDir = 'Uploaded/.talk/mov';//..movディレクトリ指定
-        }
         else{
             header("location: ../uploadTalk.php?error=nosupportcontent");
             exit();

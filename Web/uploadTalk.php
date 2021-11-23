@@ -17,7 +17,7 @@
 
         
         <div class="input-group mb-3">
-            <input name="content" type="file"  accept=".jpg , .png , .mp4 , .mov , .mpg , .mkv , .avi , .webm" class="form-control" id="inputGroupFile02" style="width:300px" >
+            <input name="content" type="file"  accept=" .jpg , .png " class="form-control" id="inputGroupFile02" style="width:300px" >
         </div> 
 
         
