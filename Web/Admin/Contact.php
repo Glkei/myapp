@@ -68,14 +68,13 @@
                     <textarea rows="10" cols="60" 
                     placeholder="お問い合わせ内容" style="font-size: 20px" 
                     required name="ditails"></textarea></div>
-                <div class="submit"><input type="submit" name="submit" value="送信"></div>
+                <div class="submit"><input type="submit" name="submit" value="送信" id="btn"></div>
 
              </form>
 
             </div>
         </div>
     </main>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
   require_once '../template/footer.php';
 ?>
