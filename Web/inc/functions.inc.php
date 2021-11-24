@@ -190,7 +190,7 @@ function emptyInputDef($content_path,$title){
     return $result;
 }
 
-function UploadDef( $conn,$content_path,$title,$ditails ){
+function UploadDef( $conn,$usersUid,$content_path,$title,$ditails ){
     if(!$conn){
         echo "Filed";
         header("location: ../uploadDef.php?error=canotconnectit");
@@ -199,8 +199,8 @@ function UploadDef( $conn,$content_path,$title,$ditails ){
 
     $query=
     "INSERT 
-    INTO `uploads_Def`(`Content`, `Title`, `Ditails`) 
-    VALUES ( '".$content_path."','".$title."','".$ditails."' );";
+    INTO `uploads_Def`(`usersUid`,`Content`, `Title`, `Ditails`) 
+    VALUES ( '".$usersUid."','".$content_path."','".$title."','".$ditails."' );";
      
     $result = mysqli_query($conn,$query);
 
@@ -264,7 +264,7 @@ function emptyInputTalk($content_path,$title){
     return $result;
 }
 
-function UploadTalk( $conn,$content_path,$title,$ditails ){
+function UploadTalk( $usersUid,$conn,$content_path,$title,$ditails ){
     if(!$conn){
         echo "Filed";
         header("location: ../uploadTalk.php?error=canotconnectit");
@@ -273,8 +273,8 @@ function UploadTalk( $conn,$content_path,$title,$ditails ){
 
     $query=
     "INSERT 
-    INTO `uploads_talk`(`Content`, `Title`, `Ditails`) 
-    VALUES ( '".$content_path."','".$title."','".$ditails."' );";
+    INTO `uploads_talk`( `usersUid`,`Content`, `Title`, `Ditails`) 
+    VALUES ( '".$usersUid.",'".$content_path."','".$title."','".$ditails."' );";
      
     $result = mysqli_query($conn,$query);
 
@@ -285,4 +285,29 @@ function UploadTalk( $conn,$content_path,$title,$ditails ){
 
     header("location: ../uploadTalk.php?error=none");
     exit();
+}
+
+function viewName($conn,$valUid){
+    if(!$conn){
+        header("location: ../uploadTalk.php?error=cantconnected");
+        exit();
+    }
+ 
+    
+    $query=
+    "SELECT `accountName` FROM `user` WHERE `usersUid` = '".$valUid.";";
+
+    $result = mysqli_query($conn,$query);
+
+    if(!$result){
+        return false;
+        header("location: ../uploadTalk.php?error=queryerror");
+        exit();
+    }
+    else{
+    
+        echo $result;
+
+    }
+
 }

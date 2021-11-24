@@ -29,6 +29,7 @@
                </div>
 
                <div class="con-right">
+                  <h2> <?php $valUid =  $val["usersUid"]; viewName($conn,$valUid); ?> </h2>
                   <a href=""><h2><?php echo $val["Title"]; ?></h2></a>
                   <label><?php echo $val["Ditails"]; ?></label>
                </div>

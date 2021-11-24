@@ -1,5 +1,13 @@
 <?php
 
+session_start();
+if(!isset($_SESSION['useruid'])){
+    header("location: Admin/Login.php?error=needthelogin");
+    exit();
+}
+
+$usersUid = $_SESSION['useruid'];
+
 if(isset($_POST["submit"])){
     
     //アップロード情報を$_FILE['content']で獲得
@@ -48,7 +56,7 @@ if(isset($_POST["submit"])){
         exit();
     }
 
-    UploadDef( $conn,$content_path,$title,$ditails );
+    UploadDef( $conn,$usersUid,$content_path,$title,$ditails );
 
 }
 else{
