@@ -37,11 +37,16 @@
                 <h1 style="text-align: center;color:#ffffff ;">投稿された画像</h1>
                 <div class="image-container">
                    <ul class=" img-wrapper">
-
-                    <?php foreach($data as $val):?>
-
-                     <li><a href="#"><img src="<?php echo $val["Content"] ?>" alt=""></a ></li>
-                   
+                     <?php foreach($data as $val):?>
+                        <section class="hover">
+                            <a href="#"><div class="hover-img">
+                              <img src="<?php echo $val["Content"]?>" alt="cafe">
+                            </div>
+                            <div class="hover-text">
+                              <p class="text1"><?php echo $val["Title"]?></p>
+                              <p class="text2"><?php echo $val["Ditails"]?></p>
+                            </div></a>
+                        </section>
                     <?php endforeach; ?>
 
                     </ul>

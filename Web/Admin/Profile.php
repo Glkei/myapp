@@ -38,4 +38,4 @@ if(!isset($_SESSION["useruid"])){
 
 
 
-<?php require_once '../template/header.inc.php'; ?>
+<?php require_once '../template/header.inc.php';?>

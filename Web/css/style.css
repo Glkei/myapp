@@ -228,3 +228,56 @@ body{
     color: #fff;
     /* background-color: #3498db; */
 }
+
+.hover {
+  position: relative;
+  margin-left: 7px;
+  /* width: 320px;
+  height:213px; */
+}
+
+.hover .hover-img {
+  /* margin: 0;
+  padding: 0; */
+}
+
+.hover-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.hover .hover-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: #fff;
+  background-color: rgba(0,0,0,0.65);
+  /*透明にして表示させない*/
+  opacity: 0;
+  /*ホバーの動き方*/
+  transition: .3s ease-in-out;
+}
+
+.hover .hover-text .text1 {
+  font-size: 22px;
+  padding: 10px 20px;
+}
+
+.hover .hover-text .text2 {
+  font-size: 16px;
+  padding: 0 20px;
+}
+
+/*ホバーエフェクト*/
+.hover:hover .hover-text {
+  /*不透明にして表示*/
+  opacity: 1;
+}
+
+/* <!-- <?php foreach($data as $val):?>
+
+<li><a href="#"><img src="<?php echo $val["Content"] ?>" alt=""></a ></li>
+                    
+<?php endforeach; ?> -->

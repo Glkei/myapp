@@ -153,7 +153,7 @@ function emptyInputUpload( $content_path,$timeAt,$title,$Players,$weapons,$Monst
 }
 
 
-function UploadTA( $conn,$content_path,$hunterName,$timeAt,$title,$comment,$Players,$weapons,$MonstersNum ){
+function UploadTA( $conn,$usersUid,$content_path,$hunterName,$timeAt,$title,$comment,$Players,$weapons,$MonstersNum ){
     if(!$conn){
         echo "Filed";
         header("location: ../upload.php?error=canotconnectit");
@@ -162,8 +162,8 @@ function UploadTA( $conn,$content_path,$hunterName,$timeAt,$title,$comment,$Play
 
     $query=
     "INSERT 
-    INTO `uploads_at`(`Content`, `huntersName`, `timeAttack`, `Title`, `Comment`, `HowManyPlayer`, `weaponsId`, `MonstersId`) 
-    VALUES ('".$content_path."','".$hunterName."','".$timeAt."','".$title."','".$comment."','".$Players."','".$weapons."','".$MonstersNum."')";
+    INTO `uploads_at`( `usersUid` , `Content`,`huntersName`, `timeAttack`, `Title`, `Comment`, `HowManyPlayer`, `weaponsId`, `MonstersId`) 
+    VALUES ( '".$usersUid."', '".$content_path."','".$hunterName."','".$timeAt."','".$title."','".$comment."','".$Players."','".$weapons."','".$MonstersNum."')";
      
     $result = mysqli_query($conn,$query);
 
