@@ -295,18 +295,17 @@ function viewName($conn,$valUid){
  
     
     $query=
-    "SELECT `accountName` FROM `user` WHERE `usersUid` = '".$valUid.";";
+    "SELECT `accountName` FROM `user` WHERE `usersUid` = '".$valUid."';";
 
     $result = mysqli_query($conn,$query);
 
     if(!$result){
-        return false;
         header("location: ../uploadTalk.php?error=queryerror");
         exit();
     }
     else{
     
-        echo $result;
+        return $result;
 
     }
 

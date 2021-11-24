@@ -3,7 +3,11 @@
   require_once 'inc/functions.inc.php';
   require_once 'inc/dbh.inc.php';
   $data = array();
-  $sql = "SELECT * FROM `uploads_talk` ORDER BY RAND() "; 
+  $sql = 
+  "SELECT * FROM `uploads_talk` 
+  INNER JOIN  `user` 
+  ON uploads_talk.usersUid = user.usersUid
+  ORDER BY RAND()"; 
   $data = getList($conn,$sql);
   $num = 0;
 ?>
@@ -25,13 +29,13 @@
             <div class="data-container">
 
                <div class="con-left">
-                  <img src = "<?php echo $val["Content"]; ?>" width="auto" height="200px">
+                  <img src = "<?php echo $val["Content"];?>" width="auto" height="200px">
                </div>
 
                <div class="con-right">
-                  <h2> <?php $valUid =  $val["usersUid"]; viewName($conn,$valUid); ?> </h2>
+                  <a href=""><?php echo $val["accountName"]; ?></h2></a>
                   <a href=""><h2><?php echo $val["Title"]; ?></h2></a>
-                  <label><?php echo $val["Ditails"]; ?></label>
+                  <label><?php echo $val["Ditails"];?></label>
                </div>
 
             </div>
