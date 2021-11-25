@@ -33,9 +33,15 @@
                </div>
 
                <div class="con-right">
-                  <a href=""><?php echo $val["accountName"]; ?></h2></a>
-                  <a href=""><h2><?php echo $val["Title"]; ?></h2></a>
-                  <label><?php echo $val["Ditails"];?></label>
+                  <div style="display:flex; text-align:center;">
+                     <a href=""><h2><?php echo $val["Title"]; ?></h2></a>
+                     <label><?php echo date('Y/m/d H:i:s',strtotime($val["uploadDate"]));?></label>
+                  </div>
+                     <label><?php echo $val["Ditails"];?></label><br>
+                     <div style="display: inline-flex;">
+                     <p>投稿者</p>
+                     <a href="" style="font-size:15px text-align:center;">:<?php echo $val["accountName"]; ?></h2></a>
+                  </div>
                </div>
 
             </div>

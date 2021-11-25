@@ -264,7 +264,7 @@ function emptyInputTalk($content_path,$title){
     return $result;
 }
 
-function UploadTalk( $usersUid,$conn,$content_path,$title,$ditails ){
+function UploadTalk( $conn,$usersUid,$content_path,$title,$ditails ){
     if(!$conn){
         echo "Filed";
         header("location: ../uploadTalk.php?error=canotconnectit");
@@ -274,7 +274,7 @@ function UploadTalk( $usersUid,$conn,$content_path,$title,$ditails ){
     $query=
     "INSERT 
     INTO `uploads_talk`( `usersUid`,`Content`, `Title`, `Ditails`) 
-    VALUES ( '".$usersUid.",'".$content_path."','".$title."','".$ditails."' );";
+    VALUES ( '".$usersUid."','".$content_path."','".$title."','".$ditails."' );";
      
     $result = mysqli_query($conn,$query);
 

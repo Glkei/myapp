@@ -111,8 +111,9 @@ body {
 
 .main-box{
     z-index: 222;
-    background: cornsilk;
+    background: rgb(253, 253, 253);
     flex:4;
+    height: 2000px;
 }
 
 .right-box{
@@ -120,7 +121,11 @@ body {
 }
 
 .data-container{
+    background: rgb(214, 200, 200);
     display: flex;
+    margin-bottom: 5px;
+    border:solid;
+    border-radius:5px #333;
 }
 
 .con-left{

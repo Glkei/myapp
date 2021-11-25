@@ -56,7 +56,7 @@ if(isset($_POST["submit"])){
         exit();
     }
 
-    UploadTalk( $usersUid,$conn,$content_path,$title,$ditails );
+    UploadTalk( $conn,$usersUid,$content_path,$title,$ditails );
 
 }
 else{

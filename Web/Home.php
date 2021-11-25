@@ -28,6 +28,10 @@
                     <li><a href="" id="#">ネタ枠<span></span></a></li>
                 </ul>
             </div>
+            
+            <form>
+                <input type="search">
+            </form>
 
         <main class="center-box">
 
@@ -54,7 +58,7 @@
             </div>
 
             <div class="Sponcer-right">
-
+                
                 <button><a href="uploadDef.php">投稿する</a></button>
 
             </div>

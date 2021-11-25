@@ -189,9 +189,9 @@ body{
 }
 
 .center-center-box{/*ブロック*/
-    box-shadow: 0 0 2px gray;
+    /* box-shadow: 0 0 2px gray; */
     flex: 6;
-    background-color:#1f222be3;
+    background:#ebe2e2e3;
 }
 
 .image-container {
@@ -236,11 +236,6 @@ body{
   height:213px; */
 }
 
-.hover .hover-img {
-  /* margin: 0;
-  padding: 0; */
-}
-
 .hover-img img {
   width: 100%;
   height: 100%;
@@ -275,9 +270,3 @@ body{
   /*不透明にして表示*/
   opacity: 1;
 }
-
-/* <!-- <?php foreach($data as $val):?>
-
-<li><a href="#"><img src="<?php echo $val["Content"] ?>" alt=""></a ></li>
-                    
-<?php endforeach; ?> -->
