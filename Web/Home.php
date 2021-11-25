@@ -8,8 +8,10 @@
   $num = 0;
 ?>
 <head>
-<title>かさねぎ.com【モンハン】重ね着、画像集！！モンハンライズ</title>
-<link rel=stylesheet href="css/style.css">
+    <title>かさねぎ.com【モンハン】重ね着、画像集！！モンハンライズ</title>
+    <link rel=stylesheet href="css/style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.1/css/all.css">
+    <script src="https://kit.fontawesome.com/afd6aa68df.js" crossorigin="anonymous"></script>
 </head>
         
             <div class="tags-container wf-sans">
@@ -28,17 +30,19 @@
                     <li><a href="" id="#">ネタ枠<span></span></a></li>
                 </ul>
             </div>
-            
-            <form>
-                <input type="search">
-            </form>
 
         <main class="center-box">
 
-            <div class="Sponcer-left"></div>
+            <div class="Sponcer-left">
+                <div class="box">
+                    <form method="GET" action="">
+                        <input type="text" onmouseout="document.search.txt.value = ''" class="input" name="search">
+                    </form>
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
             <!--center-->
             <div class="center-center-box">
-                <h1 style="text-align: center;color:#ffffff ;">投稿された画像</h1>
                 <div class="image-container">
                    <ul class=" img-wrapper">
                      <?php foreach($data as $val):?>
@@ -59,7 +63,7 @@
 
             <div class="Sponcer-right">
                 
-                <button><a href="uploadDef.php">投稿する</a></button>
+            <a href="uploadDef.php" class="btn btn-flat"><span>投稿する</span></a>
 
             </div>
         
