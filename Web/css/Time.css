@@ -5,6 +5,8 @@
     format('woff');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&display=swap');
+
 .wf-nav{
     font-family:'MH-font';
     color: white;
@@ -233,6 +235,7 @@ th{
 }
 
 .td-2{
+    font-family: 'M PLUS Rounded 1c', sans-serif !important;
     width: 312px;
     height: 70px;
     padding-left:20px;
@@ -285,4 +288,9 @@ th{
 
 .second-td{
     background: #262932;
+}
+
+.weaponImage{
+    max-width: 47px;
+    height: auto;
 }

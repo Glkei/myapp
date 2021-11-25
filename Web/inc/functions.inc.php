@@ -310,3 +310,23 @@ function viewName($conn,$valUid){
     }
 
 }
+
+function judgePath($vaWeaponsId){
+    $__ar = array(
+                    "img/WeaponImage/CustomGS-3.png",//大剣[0]
+                    "img/WeaponImage/CustomLS.png",//太刀[1]
+                    "img/WeaponImage/CustomSnS.png",//片手剣[2]
+                    "img/WeaponImage/CustomDB.png",//双剣[3]
+                    "img/WeaponImage/CustomH.png",//ハンマー[4]
+                    "img/WeaponImage/CustomHH.png",//狩猟笛[5]
+                    "img/WeaponImage/CustomL.png",//ランス[6]
+                    "img/WeaponImage/CustomGL.png",//ガンランス[7]
+                    "img/WeaponImage/CustomSA.png",//スラアク[8]
+                    "img/WeaponImage/CustomCB.png",//チャアク[9]
+                    "img/WeaponImage/CustomIG.png",//操虫棍[10]
+                    "img/WeaponImage/CustomB.png",//弓[11]
+                    "img/WeaponImage/CustomLB.png",//ライト[12]               
+                    "img/WeaponImage/CustomHB.png"//ヘビィ[13]               
+                );
+    return $__ar[$vaWeaponsId];
+}

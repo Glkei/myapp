@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
     <link rel=stylesheet href="css/Time.css">
 </haad>
         <main>
@@ -27,10 +30,18 @@
                                </tr>
                             <?php foreach($data as $val):?>
                                <tr class="no1 first-td" >
-                                   <td class="td-1 "><?php $num++; echo $num ;?></td>
-                                   <td class="td-2"><?php  echo $val["huntersName"] ;?></td>
-                                   <td class="td-3"><?php  echo $val["weaponsId"] ;?></td>
-                                   <td class="td-4"><?php  echo $val["timeAttack"] ;?></td>
+                                   <td class="td-1 "><?php $num++; echo $num;?></td>
+                                   <td class="td-2"><?php echo $val["huntersName"];?></td>
+
+                                   <td class="td-3">
+                                    <img class="weaponImage" src="<?php 
+                                    $vaWeaponsId = $val["weaponsId"];
+                                    $reJud = judgePath($vaWeaponsId);
+                                    echo $reJud;
+                                    ?>">
+                                    </td>
+
+                                   <td class="td-4"><?php echo date('i:s',strtotime($val["timeAttack"]));?></td>
                                </tr>
                             <?php endforeach; ?>
                                <!-- <tr class="no2 second-td" >
@@ -94,7 +105,7 @@
 
             <div class="center-right">
                 <div class="CR-box">
-                    <a href = "upload.php" class = "UPL">アップロードする</a>
+                    <button><a href = "upload.php" class = "UPL">アップロードする</a></button>
                 </div>
             </div>
         </main>
