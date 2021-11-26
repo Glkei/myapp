@@ -5,8 +5,6 @@
     format('woff');
 }
 
-
-
 .wf-nav{
     font-family:'MH-font';
     color:white;
@@ -91,4 +89,35 @@ body{
 .nav-wrapper a:hover{
     color:aquamarine;
    
+}
+
+.mainBox{
+    background: #ffffff;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 90%;
+    height: 90%;
+}
+
+.form-wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    color:black;
+    width: 80%;
+    height: auto;
+    position: relative;
+    left:10%;
+}
+
+img{
+    max-width: 200px;
+    height: auto;
+}
+
+input{
+    width: 300px;
+    min-width: 100px;
+    height: 35px;
 }

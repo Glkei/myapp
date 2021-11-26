@@ -49,7 +49,7 @@
             </div>
             <div class="right-side ">
 
-             <form class="write-something" action="../inc/Contact.inc.php" method="POST">
+             <form class="write-something" action="../inc/Contact.inc.php" method="POST" autocomplete="off">
 
                 <h3 class="wrap-input" style="font-size: 30px;">お問い合わせフォーム</h3>
                 <div class="wrap-input"><input class="iS" type="text" id=1 placeholder=" name"  name="name"></div>

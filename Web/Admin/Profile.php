@@ -8,9 +8,9 @@ if(!isset($_SESSION["useruid"])){
 ?>
 
 <head>
-    <link rel="stylesheet" href="../css/style.inc.css">
+    <link rel="stylesheet" href="../css/style2.css">
     <title>プロフィール</title>
-    <style>input{background: grey;} *{color:white; font-size: 20px;} </style>
+    <script src="../js/View.js"></script>
 </head>
 
 <section class="">
@@ -20,14 +20,19 @@ if(!isset($_SESSION["useruid"])){
     </div>
 
     <div class="mainBox">
-        <form>
-            <h1>アイコン画像</h1>
-            <br><input type="file">
-            <h1>背景画像　</h1>
-            <br><input type="file">
-            <h1>ユーザー名</h1>
-            <br><input type="text" disabled value="usrname"><button><img  src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-edit-interface-kiranshastry-lineal-kiranshastry.png"/></button>
-        </form>
+        <div class="form-wrapper">
+            <form method="POST" action="../inc/Profile.inc.php">
+                <h1>アイコン画像</h1>
+                <div id="preview" class="ViewImage"></div>
+                <br><input type="file" onChange="imgPreView(event)" name="IconImage">
+                <h1>背景画像　</h1>
+                <div id="preview2" class="ViewImage"></div>
+                <br><input type="file" onChange="imgPreView2(event)" name="BackgroundImage">
+                <p>ユーザー名</p>
+                <br><input type="text" disabled value="username" name="">
+                <br><input type="submit" placeholder="保存"> 
+            </form>
+        </div>
     </div>
 
     <div class="rightBox">

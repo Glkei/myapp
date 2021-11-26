@@ -44,7 +44,7 @@
     </div>
     </header>
  <div class="container wf-en">
-  <form method="POST" class="main-box" action="../inc/Login.inc.php">
+  <form method="POST" class="main-box" action="../inc/Login.inc.php" autocomplete="off">
       <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">ユーザー名/メールアドレス</label>
           <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="uid" placeholder="ユーザー名/メールアドレス">

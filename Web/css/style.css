@@ -5,7 +5,13 @@
     format('woff');
 }
 
+input{
+    background: grey;
+}
 
+*{
+    color:white; font-size: 20px;
+}
 
 .wf-nav{
     font-family:'MH-font';

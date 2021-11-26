@@ -39,7 +39,7 @@
     <section class="Signup-form">
      <h2>アカウント新規作成</h2>
      <div class="Signup-form-form">
-        <form class="Signup-form-wrapper" action="../inc/Signup.inc.php" method="POST">
+        <form class="Signup-form-wrapper" action="../inc/Signup.inc.php" method="POST" autocomplete="off">
           <input type="text" name = "name" placeholder ="フルネーム">
           <input type="text" name = "email" placeholder ="メールアドレス">
           <input type="text" name = "uid" placeholder ="ユーザー名">
