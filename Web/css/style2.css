@@ -91,24 +91,32 @@ body{
    
 }
 
+
+.__section{
+    width: 1000px;
+    position: relative;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .mainBox{
     background: #ffffff;
     position: relative;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: 90%;
+    width: 1000px;
     height: 90%;
 }
 
 .form-wrapper{
-    margin-left: auto;
-    margin-right: auto;
-    color:black;
-    width: 80%;
-    height: auto;
     position: relative;
-    left:10%;
+    left:30%;
+    color:black;
+    width: 350px;
+    height: auto;
+
 }
 
 img{

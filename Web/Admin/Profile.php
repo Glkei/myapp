@@ -13,7 +13,7 @@ if(!isset($_SESSION["useruid"])){
     <script src="../js/View.js"></script>
 </head>
 
-<section class="">
+<section class="__section">
 
     <div class="leftBox">
     
@@ -21,16 +21,16 @@ if(!isset($_SESSION["useruid"])){
 
     <div class="mainBox">
         <div class="form-wrapper">
-            <form method="POST" action="../inc/Profile.inc.php">
+            <form method="POST" action="../inc/Profile.inc.php" class="forms">
+                <p>ユーザー名</p>
+                <br><input type="text" autocomplete="off" name="">
                 <h1>アイコン画像</h1>
                 <div id="preview" class="ViewImage"></div>
-                <br><input type="file" onChange="imgPreView(event)" name="IconImage">
+                <br><input type="file" onChange="imgPreView(event)" autocomplete="off" name="IconImage">
                 <h1>背景画像　</h1>
                 <div id="preview2" class="ViewImage"></div>
-                <br><input type="file" onChange="imgPreView2(event)" name="BackgroundImage">
-                <p>ユーザー名</p>
-                <br><input type="text" disabled value="username" name="">
-                <br><input type="submit" placeholder="保存"> 
+                <br><input type="file" onChange="imgPreView2(event)"autocomplete="off" name="BackgroundImage">
+                <br> <br><input type="submit" placeholder="保存"> 
             </form>
         </div>
     </div>

@@ -36,7 +36,7 @@
             <div class="Sponcer-left">
                 <div class="box">
                     <form method="GET" action="">
-                        <input type="text" onmouseout="document.search.txt.value = ''" class="input" name="search">
+                        <input type="text" onmouseout="document.search.txt.value = ''" class="input" name="search" autocomplete="off" >
                     </form>
                     <i class="fas fa-search"></i>
                 </div>

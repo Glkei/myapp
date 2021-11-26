@@ -41,7 +41,7 @@
                                     ?>">
                                     </td>
 
-                                   <td class="td-4"><?php echo date('i:s',strtotime($val["timeAttack"]));?></td>
+                                   <td class="td-4"><?php echo date('i’s”',strtotime($val["timeAttack"]));?></td>
                                </tr>
                             <?php endforeach; ?>
                                <!-- <tr class="no2 second-td" >
