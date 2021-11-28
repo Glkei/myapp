@@ -14,8 +14,8 @@
 <!--HTML Code-->
 
 <head>
-<link rel=stylesheet href="css/Talk.css">
-<title>掲示板</title>
+   <link rel="stylesheet" href="css/Talk.css">
+   <title>掲示板</title>
 </head>
 
 <section class="main">

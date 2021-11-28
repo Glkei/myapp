@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/afd6aa68df.js" crossorigin="anonymous"></script>
     <link rel=stylesheet href="css/Time.css">
 </haad>
         <main>
@@ -106,6 +107,14 @@
             <div class="center-right">
                 <div class="CR-box">
                     <button><a href = "upload.php" class = "UPL">アップロードする</a></button>
+
+                    <div class="box">
+                        <form method="GET" action="">
+                            <input type="text" onmouseout="document.search.txt.value = ''" class="input" name="search" autocomplete="off" >
+                        </form>
+                        <i class="fas fa-search"></i>
+                    </div>
+
                 </div>
             </div>
         </main>
