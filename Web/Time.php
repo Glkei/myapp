@@ -117,16 +117,16 @@
                     
                     <div class="filterSerch">
                      <p class="h1z">フィルター / FILTER</p>
-                        <form method = "POST" action="FilterSerch.inc.php">
+                        <form method = "POST" action="inc/FilterSerch.inc.php">
                            
                             <div>
                                 <div class="shth">
-                                    <a>Rank</a>
+                                    <a>#ランク / #RANK</a>
                                 </div>
                                 
                                 <div class="selectdivWrapper">
                                     <div class="selectdiv">
-                                          <select>
+                                          <select name="Ranking"> <!-- id = Ranking -->
                                               <option selected >ランク順位</option>
                                               <option value="0">昇順</option>
                                               <option value="1">降順</option>
@@ -134,20 +134,55 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div>
                                 <div class="shth">
-                                    <a>Weapon</a>
+                                    <a>武器種 / WEAPONS</a>
                                 </div>
                                 
                                 <div class="selectdivWrapper">
                                     <div class="selectdiv">
-                                          <select name="">
+                                          <select name="WeaponId"> <!-- id = WeaponId -->
                                             <option selected>武器を選択</option>
                                             <?php require_once 'inc/Weapon.inc.php'; ?>
                                           </select>
                                     </div>
                                 </div>
                             </div>
+
+                            <div>
+                                <div class="shth">
+                                    <a>投稿日時 / UPLOAD DATE</a>
+                                </div>
+                                
+                                <div class="selectdivWrapper">
+                                    <div class="selectdiv">
+                                          <select name="upDate"> <!-- id = upDate -->
+                                            <option selected>投稿日順</option>
+                                            <option value="0">昇順</option>
+                                            <option value="1">降順</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="shth">
+                                    <a>モンスター名 / MONSTER NAME</a>
+                                </div>
+                                
+                                <div class="selectdivWrapper">
+                                    <div class="selectdiv">
+                                          <select name="MonstersID"> <!-- id = MonstersID -->
+                                            <option selected>モンスター名</option>
+                                            <?php require_once 'inc/MonsterList.inc.php'; ?>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit"><a class="btn btn-flat"><span>アップロードする</span></a></button>
+                            
                         </form>
                     </div>
                 </div>

@@ -206,7 +206,8 @@ th{
     padding-left:40px;
     text-align: left;
     font-size: 22px;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'M PLUS Rounded 1c', sans-serif !important;
     height: 50px;
 }
 
@@ -495,7 +496,7 @@ a.btn-flat:hover:after {
 
 .selectdivWrapper{
     height: 90px;
-    background: #1f222b;
+    background: #0f1115;
 }
 
 /* IE11 hide native button (thanks Matt!) */
