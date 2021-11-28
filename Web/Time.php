@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/afd6aa68df.js" crossorigin="anonymous"></script>
-    <link rel=stylesheet href="css/Time.css">
+    <link rel="stylesheet" href="css/Time.css">
 </haad>
         <main>
             <div class="center-left">
@@ -106,7 +106,7 @@
 
             <div class="center-right">
                 <div class="CR-box">
-                    <button><a href = "upload.php" class = "UPL">アップロードする</a></button>
+                    <a href = "upload.php" class="btn btn-flat"><span>アップロードする</span></a>
 
                     <div class="box">
                         <form method="GET" action="">
@@ -114,7 +114,42 @@
                         </form>
                         <i class="fas fa-search"></i>
                     </div>
-
+                    
+                    <div class="filterSerch">
+                     <p class="h1z">フィルター / FILTER</p>
+                        <form method = "POST" action="FilterSerch.inc.php">
+                           
+                            <div>
+                                <div class="shth">
+                                    <a>Rank</a>
+                                </div>
+                                
+                                <div class="selectdivWrapper">
+                                    <div class="selectdiv">
+                                          <select>
+                                              <option selected >ランク順位</option>
+                                              <option value="0">昇順</option>
+                                              <option value="1">降順</option>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="shth">
+                                    <a>Weapon</a>
+                                </div>
+                                
+                                <div class="selectdivWrapper">
+                                    <div class="selectdiv">
+                                          <select name="">
+                                            <option selected>武器を選択</option>
+                                            <?php require_once 'inc/Weapon.inc.php'; ?>
+                                          </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </main>
