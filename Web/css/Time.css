@@ -129,7 +129,7 @@ main{
     box-shadow: 0 0 20px gray;
     color:rgb(250, 250, 250);
     width: 800px;
-    height: 100%;
+    height:max-content;
     margin-left:auto; 
     /* top:50px; left:100px; */
     /* z-index: 9999; */
@@ -144,7 +144,7 @@ main{
 .CR-box{
     /* background: rgb(139, 39, 39); */
     width: 100%;
-    height: 100%;
+    height:max-content;
 }
 
 .h1z{
@@ -230,28 +230,29 @@ th{
 }
 
 /*115 312 278 282*/
-.no1 .td-1::before{
-    font-size: 40px ;
-    color:#fed30f;
+.over4 {
+    font-size: 50px ;
+    /* color:#fed30f; */
     content: "#";
 }
 
-.no2 .td-1::before{
+.td-1-1{
+    width: 115px;
+    padding-left:30px;
+    text-align: left;
+}
+
+
+.td-1::before{
     font-size:20px ;
     vertical-align:top;
     color:#fed30f;
     content: "#";
 }
 
-.no3 .td-1::before{
-    vertical-align:top;
-    /* padding-bottom: 50px; */
-    font-size: 20px ;
-    color:#fed30f;
-    content: "#";
-}
-
 .td-1{
+    font-size: 35px;
+    color:#fed30f;
     width: 115px;
     padding-left:20px;
     text-align: left;
@@ -278,31 +279,13 @@ th{
 
 .no1{
     /* color:#fed30f; */
-    font-size: 25px;
+    font-size: 30px;
     border: none;
 }
 
-.no1 .td-1{
-    color:#fed30f;
-}
-
-.no2{
-    
-    font-size: 25px;
+.over4{
+    font-size: 20px;
     border: none;
-}
-
-.no2 .td-1{
-    color:#fed30f;
-}
-
-.no3{
-    font-size: 25px;
-    border: none;
-}
-
-.no3 .td-1{
-    color:#fed30f;
 }
 
 .first-td{
@@ -317,8 +300,6 @@ th{
     max-width: 47px;
     height: auto;
 }
-
-
 
 /*searchBox*/
 
