@@ -55,8 +55,7 @@
                               <p class="text2"><?php echo $val["Ditails"]?></p>
                             </div></a>
                         </section>
-                    <?php endforeach; ?>
-
+                     <?php endforeach; ?>
                     </ul>
                 </div>
             </div>

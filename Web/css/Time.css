@@ -111,7 +111,9 @@ body {
 
 main{
     height:1000px;
+    width: 100%;
     display: flex;
+    /* background-image: url("../img/TOP/hed"); */
 }
 
 .center-left{
@@ -144,7 +146,6 @@ main{
 .CR-box{
     /* background: rgb(139, 39, 39); */
     width: 100%;
-    height:max-content;
 }
 
 .h1z{
@@ -509,6 +510,7 @@ display: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  
   /* Add some styling */
   
   display: block;
@@ -520,7 +522,7 @@ display: none;
   padding: 0px 24px;
   font-size: 16px;
   line-height: 1.75;
-  color: rgb(255, 255, 255);
+  color: #999999;
   background-color: #40434b;
   background-image: none;
   border: 1px solid #cccccc;

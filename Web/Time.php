@@ -3,9 +3,26 @@
   require_once 'inc/functions.inc.php';
   require_once 'inc/dbh.inc.php';
   $data = array();
-  $sql = "SELECT * FROM `uploads_at` ORDER BY `timeAttack` ASC"; 
-  $data = getList($conn,$sql);
+  if(isset($_SESSION['FilSerch'])){
+      
+        $sql = $_SESSION['FilSerch'];
+
+        if(!$sql){
+          header("location: Time.php?error=noitme");
+        }
+        else{
+            $data = getList($conn,$sql);
+            unset($_SESSION['FilSerch']);
+            
+        }
+    
+    } 
+    else{
+        $sql = "SELECT * FROM `uploads_at` ORDER BY `timeAttack` ASC";
+        $data = getList($conn,$sql);
+    } 
   $num = 0;
+  var_dump($sql);
 ?>
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,21 +77,7 @@
              <p class="h1z">フィルター / FILTER</p>
                 <form method = "POST" action="inc/FilterSerch.inc.php">
                    
-                    <div>
-                        <div class="shth">
-                            <a>#ランク / #RANK</a>
-                        </div>
-                        
-                        <div class="selectdivWrapper">
-                            <div class="selectdiv">
-                                  <select name="Ranking"> <!-- id = Ranking -->
-                                      <option selected >ランク順位</option>
-                                      <option value="0">昇順</option>
-                                      <option value="1">降順</option>
-                                  </select>
-                            </div>
-                        </div>
-                    </div>
+                
                     <div>
                         <div class="shth">
                             <a>武器種 / WEAPONS</a>
@@ -82,8 +85,8 @@
                         
                         <div class="selectdivWrapper">
                             <div class="selectdiv">
-                                  <select name="WeaponId"> <!-- id = WeaponId -->
-                                    <option selected>武器を選択</option>
+                                  <select name="WeaponId" required>
+                                    <option hidden>武器を選択</option>
                                     <?php require_once 'inc/Weapon.inc.php'; ?>
                                   </select>
                             </div>
@@ -96,30 +99,17 @@
                         
                         <div class="selectdivWrapper">
                             <div class="selectdiv">
-                                  <select name="upDate"> <!-- id = upDate -->
-                                    <option selected>投稿日順</option>
+                                  <select name="upDate" required >
+                                    <option hidden>投稿日順</option>
                                     <option value="0">昇順</option>
                                     <option value="1">降順</option>
                                   </select>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="shth">
-                            <a>モンスター名 / MONSTER NAME</a>
-                        </div>
-                        
-                        <div class="selectdivWrapper">
-                            <div class="selectdiv">
-                                  <select name="MonstersID"> <!-- id = MonstersID -->
-                                    <option selected>モンスター名</option>
-                                    <?php require_once 'inc/MonsterList.inc.php'; ?>
-                                  </select>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit"><a class="btn btn-flat"><span>実行</span></a></button>
-                    
+
+                    <input type="submit" name="submit">
+
                 </form>
             </div>
         </div>
@@ -128,3 +118,8 @@
 <?php
    require_once 'template/footer.php';
 ?>
+
+
+
+
+

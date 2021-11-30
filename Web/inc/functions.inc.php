@@ -330,3 +330,51 @@ function judgePath($vaWeaponsId){
                 );
     return $__ar[$vaWeaponsId];
 }
+
+function emptyInputFilterSerch($weaponsId,$upDate){
+    $result = null;
+
+    if( empty($weaponsId) || empty($upDate) ){
+       $result = true;
+    }
+    else{
+        $result = false;
+    }
+
+    return $result;
+
+}
+
+function filterSerch( $weaponsId,$upDate ){
+
+    $__qu = array(
+
+            "SELECT * FROM `uploads_at` ORDER BY `uploadDate` ASC",
+            "SELECT * FROM `uploads_at` ORDER BY `uploadDate` DESC"
+        
+    );
+
+    if( $weaponsId && $upDate ){/*全選択されていたら*/
+
+        if( $upDate == 0  ){
+
+            $sql = 
+            "SELECT * FROM `uploads_at` WHERE `weaponsId` = $weaponsId ORDER BY `uploadDate` ASC";
+        
+        }elseif( $upDate == 1 ){
+
+            $sql = 
+            "SELECT * FROM `uploads_at` WHERE `weaponsId` = $weaponsId ORDER BY `uploadDate` DESC";    
+        
+        }
+    
+    }elseif( $upDate ){
+        $sql = $__qu[$upDate] ;
+
+    }elseif( $weaponsId ){
+        $sql = "SELECT * FROM `uploads_at` WHERE `weaponsId` = $weaponsId " ;
+
+    }
+
+    return $sql;   
+}
