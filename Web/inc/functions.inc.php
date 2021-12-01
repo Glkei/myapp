@@ -349,9 +349,8 @@ function filterSerch( $weaponsId,$upDate ){
 
     $__qu = array(
 
-            "SELECT * FROM `uploads_at` ORDER BY `uploadDate` ASC",
-            "SELECT * FROM `uploads_at` ORDER BY `uploadDate` DESC"
-        
+            "SELECT * FROM `uploads_at` ORDER BY `uploadDate` ASC",/*$__qu[0]*/
+            "SELECT * FROM `uploads_at` ORDER BY `uploadDate` DESC"/*$__qu[1]*/
     );
 
     if( $weaponsId && $upDate ){/*全選択されていたら*/
@@ -377,4 +376,41 @@ function filterSerch( $weaponsId,$upDate ){
     }
 
     return $sql;   
+}
+
+function emptyInputPostComment($PostComment){
+
+    $result = null;
+    
+    if( empty($PostComment) ){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+
+return $result;
+}
+
+function uploadcomment($conn,$uN,$PostId,$PostComment){
+    
+    if(!$conn){
+        header("location: ../uploadTalk.php?error=canotconnectit");
+        exit();
+    }
+
+    $query=
+    "INSERT 
+     INTO `comment_at`( `usersUid`, `PostId`, `Comment` ) 
+     VALUES ('".$uN."','".$PostId."','".$PostComment."',)";
+     
+    $result = mysqli_query($conn,$query);
+
+    if(!$result){
+        header("location: ../uploadTalk.php?error=queryerror");
+        exit();
+    }
+
+    header("location: ../uploadTalk.php?error=none");
+    exit();
 }

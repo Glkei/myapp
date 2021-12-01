@@ -45,7 +45,7 @@
     <main class="center-box">
         <div class="contact-form">
             <div class="left-side">
-                <img src="../img/SEND-ICON.png" class="form-icon"></img>
+                <img src="../img/SEND-ICON.png" class="form-icon">
             </div>
             <div class="right-side ">
 

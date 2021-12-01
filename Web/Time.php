@@ -3,26 +3,39 @@
   require_once 'inc/functions.inc.php';
   require_once 'inc/dbh.inc.php';
   $data = array();
-  if(isset($_SESSION['FilSerch'])){
+  
+// if(isset($_SESSION['FilSerch'])){
       
-        $sql = $_SESSION['FilSerch'];
+//     $sql = $_SESSION['FilSerch'];
 
-        if(!$sql){
-          header("location: Time.php?error=noitme");
-        }
-        else{
-            $data = getList($conn,$sql);
-            unset($_SESSION['FilSerch']);
-            
-        }
+//     if(!$sql){
+//           header("location: Time.php?error=noitem");
+//     }
+//     else{
+//         $data = getList($conn,$sql);
+//         unset($_SESSION['FilSerch']);
+//     }
     
-    } 
-    else{
-        $sql = "SELECT * FROM `uploads_at` ORDER BY `timeAttack` ASC";
-        $data = getList($conn,$sql);
-    } 
-  $num = 0;
-  var_dump($sql);
+// } 
+// else{
+
+// $sql = "SELECT * FROM `uploads_at` ORDER BY `timeAttack` ASC";
+// $data = getList($conn,$sql);
+// } 
+
+$filS = filter_input(INPUT_GET,'serch');
+
+if($filS){
+    $sql = "SELECT * FROM `uploads_at` WHERE `huntersName` LIKE CONCAT('%','".$filS."','%') ORDER BY `timeAttack` ASC";
+}
+else{
+    $sql = "SELECT * FROM `uploads_at` ORDER BY `timeAttack` ASC";  
+}
+$data = getList($conn,$sql);
+
+$num = 0;
+var_dump($sql);
+
 ?>
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,8 +64,8 @@
                     <?php foreach($data as $val):?>
                 
                        <tr class="<?php if( $num < 3 ){ echo ' no1'; }else{ echo 'over4'; }; ?><?php if($num %2 == 0){ echo ' first-td'; }else{ echo ' second-td'; } ?>" >                                               
-               <td class="<?php if( $num < 3 ){ echo ' td-1'; }else{ echo ' td-1-1'; }; ?> "><?php $num++; echo $num;?></td>
-                           <td class="td-2"><?php echo $val["huntersName"];?></td>
+                           <td class="<?php if( $num < 3 ){ echo ' td-1'; }else{ echo ' td-1-1'; }; ?> "><?php $num++; echo $num;?></td>
+                           <td class="td-2"><a href="Comment.php?content=<?php echo $val["recordId"]; ?>  " ><?php echo $val["huntersName"];?></a></td>
                            <td class="td-3"><img class="weaponImage" src="<?php $vaWeaponsId = $val["weaponsId"];$reJud = judgePath($vaWeaponsId);echo $reJud ;?>"></td>
                            <td class="td-4"><?php echo date('i’s”',strtotime($val["timeAttack"]));?></td>
                        </tr>
@@ -67,8 +80,8 @@
         <div class="CR-box">
             <a href = "upload.php" class="btn btn-flat"><span>投稿</span></a>
             <div class="box">
-                <form method="GET" action="">
-                    <input type="text" onmouseout="document.search.txt.value = ''" class="input" name="search" autocomplete="off" >
+                <form method="GET">
+                    <input type="text" onmouseout="document.search.txt.value = ''" class="input" name="serch" autocomplete="off" >
                 </form>
                 <i class="fas fa-search"></i>
             </div>
