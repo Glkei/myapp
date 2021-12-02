@@ -392,25 +392,25 @@ function emptyInputPostComment($PostComment){
 return $result;
 }
 
-function uploadcomment($conn,$uN,$PostId,$PostComment){
+function uploadcomment($conn,$Content,$userUid,$PostComment){
     
     if(!$conn){
-        header("location: ../uploadTalk.php?error=canotconnectit");
+        header("location: ../Comment.php?content=$Content&error=canotconnectit");
         exit();
     }
 
     $query=
-    "INSERT 
-     INTO `comment_at`( `usersUid`, `PostId`, `Comment` ) 
-     VALUES ('".$uN."','".$PostId."','".$PostComment."',)";
+   "INSERT 
+    INTO `comment_at`( `PostId`, `usersUid`, `Comment` ) 
+    VALUES ('".$Content."','".$userUid."','".$PostComment."');";
      
     $result = mysqli_query($conn,$query);
 
     if(!$result){
-        header("location: ../uploadTalk.php?error=queryerror");
+        header("location: ../Comment.php?content=$Content&error=queryerror");
         exit();
     }
 
-    header("location: ../uploadTalk.php?error=none");
+    header("location: ../Comment.php?content=$Content&error=none");
     exit();
 }

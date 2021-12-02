@@ -15,10 +15,13 @@ $sql =
 $data = getList($conn,$sql);
 
 $CommentData = array();
-$sql = 
-"SELECT * FROM `comment_at` WHERE `PostId` = '".$reId."' ";
+$sqll = 
+"SELECT * FROM `comment_at` 
+ INNER JOIN  `user` 
+ ON comment_at.usersUid = user.usersUid
+ WHERE comment_at.`PostId` = '".$reId."' ";
 
-$CommentData = getList($conn,$sql);
+$CommentData = getList($conn,$sqll);
 
 ?>
 <head>
@@ -38,7 +41,7 @@ $CommentData = getList($conn,$sql);
             <h2><?php echo $val["Title"]; ?></h2>
             <p>クリック回数：</p>
             <div>
-                <img src="<?php echo $val["Content"]; ?>" style="max-width:400px">
+                <img src="<?php echo $val["iconPath"]; ?>" style="max-width:100px">
                 <h2><a href="userProf.php?u=<?php echo $val["usersUid"] ;?>"><?php echo $val["accountName"]; ?></a></h2>
             </div>
         </div>
@@ -46,19 +49,19 @@ $CommentData = getList($conn,$sql);
     <?php endforeach; ?>
     <br>コメントする:
 
-    <form method="POST" action="inc/Post_atComment.inc.php">
+    <form method="POST" action="inc/Post_atComment.inc.php?content=<?php echo $reId; ?>">
         <textarea name="PostComment" cols="30" rows="3" style="color:black;"></textarea>
-        <input type="number" name="<?php echo $reID;?>" disabled>
         <input type="submit" name="submit">
     </form>
 
     <br>
     <!-- コメント集 -->
+    <h1 style="font-size: 30px;">コメント一覧</h1>
     <?php foreach($CommentData as $val): ?>
 
         <div class="Comments">
-
-            <p><?php echo $val["accountName"]; ?></p>
+            
+            <p><?php echo $val["accountName"]; ?>のコメント：<?php echo $val["Comment"] ?></p>
 
         </div>
 
