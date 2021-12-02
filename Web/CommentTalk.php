@@ -8,19 +8,19 @@ $CounterRecord = 0;
 
 $data = array();
 $sql = 
-"SELECT * FROM `uploads_at` 
+"SELECT * FROM `uploads_talk` 
  INNER JOIN  `user` 
- ON uploads_at.usersUid = user.usersUid
- WHERE uploads_at.recordId = '".$reId."' ";
+ ON uploads_talk.usersUid = user.usersUid
+ WHERE uploads_talk.recordId = '".$reId."' ";
 
 $data = getList($conn,$sql);
 
 $CommentData = array();
 $sqll = 
-"SELECT * FROM `comment_at` 
+"SELECT * FROM `comment_talk` 
  INNER JOIN  `user` 
- ON comment_at.usersUid = user.usersUid
- WHERE comment_at.`PostId` = '".$reId."' ";
+ ON comment_talk.usersUid = user.usersUid
+ WHERE comment_talk.PostId = '".$reId."' ";
 
 $CommentData = getList($conn,$sqll);
 
@@ -49,8 +49,7 @@ $CommentData = getList($conn,$sqll);
     </div>
     <?php endforeach; ?>
     <br>コメントする:
-
-    <form method="POST" action="inc/Post_atComment.inc.php?content=<?php echo $reId; ?>">
+    <form method="POST" action="inc/Post_talkComment.inc.php?content=<?php echo $reId; ?>">
         <textarea name="PostComment" cols="30" rows="3" style="color:black;"></textarea>
         <input type="submit" name="submit">
     </form>

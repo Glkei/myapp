@@ -414,3 +414,77 @@ function uploadcomment($conn,$Content,$userUid,$PostComment){
     header("location: ../Comment.php?content=$Content&error=none");
     exit();
 }
+
+function emptyInputPostCommentDef($PostComment){
+
+    $result = null;
+    
+    if( empty($PostComment) ){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+
+return $result;
+}
+
+function uploadcommentDef($conn,$Content,$userUid,$PostComment){
+    
+    if(!$conn){
+        header("location: ../CommentDef.php?content=$Content&error=canotconnectit");
+        exit();
+    }
+
+    $query=
+   "INSERT 
+    INTO `comment_def`( `PostId`, `usersUid`, `Comment` ) 
+    VALUES ('".$Content."','".$userUid."','".$PostComment."');";
+     
+    $result = mysqli_query($conn,$query);
+
+    if(!$result){
+        header("location: ../CommentDef.php?content=$Content&error=queryerror");
+        exit();
+    }
+
+    header("location: ../CommentDef.php?content=$Content&error=none");
+    exit();
+}
+
+function emptyInputPostCommentTalk($PostComment){
+
+    $result = null;
+    
+    if( empty($PostComment) ){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+
+return $result;
+}
+
+function uploadcommentTalk($conn,$Content,$userUid,$PostComment){
+    
+    if(!$conn){
+        header("location: ../CommentTalk.php?content=$Content&error=canotconnectit");
+        exit();
+    }
+
+    $query=
+   "INSERT 
+    INTO `comment_talk`( `PostId`, `usersUid`, `Comment` ) 
+    VALUES ('".$Content."','".$userUid."','".$PostComment."');";
+     
+    $result = mysqli_query($conn,$query);
+
+    if(!$result){
+        header("location: ../CommentTalk.php?content=$Content&error=queryerror");
+        exit();
+    }
+
+    header("location: ../CommentTalk.php?content=$Content&error=none");
+    exit();
+}

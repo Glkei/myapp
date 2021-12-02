@@ -34,7 +34,7 @@
 
                <div class="con-right">
                   <div style="display:flex; text-align:center;">
-                     <a href=""><h2><?php echo $val["Title"]; ?></h2></a>
+                     <a href="CommentTalk.php?content=<?php echo $val["recordId"]; ?>"><h2><?php echo $val["Title"]; ?></h2></a>
                      <label><?php echo date('Y/m/d H:i:s ',strtotime($val["uploadDate"]));?></label>
                   </div>
                      <label><?php echo $val["Ditails"];?></label><br>

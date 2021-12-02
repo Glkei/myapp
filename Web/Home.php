@@ -47,7 +47,8 @@
                    <ul class=" img-wrapper">
                      <?php foreach($data as $val):?>
                         <section class="hover">
-                            <a href="#"><div class="hover-img">
+                            <a href="CommentDef.php?content=<?php echo $val["recordId"];?>">
+                            <div class="hover-img">
                               <img src="<?php echo $val["Content"]?>" alt="cafe">
                             </div>
                             <div class="hover-text">
