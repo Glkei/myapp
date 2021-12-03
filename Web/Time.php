@@ -23,7 +23,7 @@
 // $data = getList($conn,$sql);
 // } 
 
-$filS = filter_input(INPUT_GET,'serch');
+$filS = filter_input(INPUT_GET,'search');
 
 if($filS){
     $sql = "SELECT * FROM `uploads_at` WHERE `huntersName` LIKE CONCAT('%','".$filS."','%') ORDER BY `timeAttack` ASC";
@@ -81,7 +81,7 @@ var_dump($sql);
             <a href = "upload.php" class="btn btn-flat"><span>投稿</span></a>
             <div class="box">
                 <form method="GET">
-                    <input type="text" onmouseout="document.search.txt.value = ''" class="input" name="serch" autocomplete="off" >
+                    <input type="text" onmouseout="document.search.txt.value = ''" class="input" name="search" autocomplete="off" >
                 </form>
                 <i class="fas fa-search"></i>
             </div>

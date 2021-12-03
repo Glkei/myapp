@@ -14,6 +14,7 @@
 <!--HTML Code-->
 
 <head>
+   <script src="https://kit.fontawesome.com/afd6aa68df.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="css/Talk.css">
    <title>掲示板</title>
 </head>
@@ -21,6 +22,14 @@
 <section class="main">
 
    <div class="left-box">
+
+      <div class="box">
+          <form method="GET">
+              <input type="text" onmouseout="document.search.txt.value = ''" class="input" name="search" autocomplete="off" >
+          </form>
+          <i class="fas fa-search"></i>
+      </div>
+
       <a href="uploadTalk.php">投稿する</a>
    </div>
 
