@@ -8,8 +8,10 @@
   $filS = filter_input(INPUT_GET,'search');
   $tagS = filter_input(INPUT_GET,'tag');
   //初期SQL
-  $sql = "SELECT * FROM `uploads_def` ";
-  $tagsSQL = "SELECT * FROM `tag_def` ORDER BY RAND();";
+  $sql = "SELECT * FROM `uploads_def` 
+          INNER JOIN  `user` 
+          ON uploads_def.usersUid = user.usersUid";
+  $tagsSQL = "SELECT * FROM `tag_def`";
 
   if($filS){
     $sql = "SELECT * FROM `uploads_def` WHERE `Title` LIKE CONCAT('%','".$filS."','%') OR `Ditails` LIKE CONCAT('%','".$filS."','%') ORDER BY `Title` ASC;";
@@ -35,21 +37,9 @@
 
             <div class="tags-container wf-sans">
                 <ul class="add-tag">              
-                        <!--後々追加予定-->
-                        <!-- かっこいい
-                        かわいい<s
-                        MH-XX<span
-                        おもしろ系
-                        女性キャラ
-                        男性キャラ
-                        MH-WI<span
-                        重ね着<spa
-                        MH-Rise<sp
-                        セクシー<s
-                        ネタ枠<spa -->
-                    <?php foreach($tagsData as $val):?>
-                        <li><a href="Home.php?tag=<?php echo $val["tagName"];?>"><?php echo $val["tagName"];?><span><?php echo $val["tagCount"]; ?></span></a></li>
-                    <?php endforeach; ?>
+                 <?php foreach($tagsData as $val):?>
+                     <li><a href="Home.php?tag=<?php echo $val["tagName"];?>"><?php echo $val["tagName"];?><span><?php echo $val["tagCount"]; ?></span></a></li>
+                 <?php endforeach; ?>
                 </ul>
             </div>
 
@@ -77,6 +67,9 @@
                             <div class="hover-text">
                               <p class="text1"><?php echo $val["Title"]?></p>
                               <p class=""><?php echo $val["Ditails"]?></p>
+                              <p class="">@<?php echo $val["usersUid"]?></p>
+                              <p class=""><img src="https://img.icons8.com/flat-round/24/000000/hearts.png"/><?php echo $val["Likeit"]?></p>
+                              <p class=""><img src="https://img.icons8.com/material-outlined/24/000000/visible--v1.png"/><?php echo $val["WatchCount"]?></p>
                             </div></a>
                         </section>
                      <?php endforeach; ?>
@@ -91,7 +84,10 @@
             </div>
         
         </main>
-        <!-- <footer class="footer-box"></footer> -->
+        <footer class="footer-box">
+        <a href="https://icons8.com/icon/80322/ハート">ハート icon by Icons8</a><br>
+        <a href="https://icons8.com/icon/85028/目に見える">目に見える icon by Icons8</a>
+        </footer>
  <?php
   require_once 'template/footer.php';
  ?>

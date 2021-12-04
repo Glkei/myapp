@@ -5,9 +5,9 @@
   $data = array();
   $sql = 
   "SELECT * FROM `uploads_talk` 
-  INNER JOIN  `user` 
-  ON uploads_talk.usersUid = user.usersUid
-  ORDER BY RAND()"; 
+   INNER JOIN  `user` 
+   ON uploads_talk.usersUid = user.usersUid
+   "; 
   $data = getList($conn,$sql);
   $num = 0;
 ?>

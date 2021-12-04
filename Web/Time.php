@@ -4,32 +4,16 @@
   require_once 'inc/dbh.inc.php';
   $data = array();
   
-// if(isset($_SESSION['FilSerch'])){
-      
-//     $sql = $_SESSION['FilSerch'];
-
-//     if(!$sql){
-//           header("location: Time.php?error=noitem");
-//     }
-//     else{
-//         $data = getList($conn,$sql);
-//         unset($_SESSION['FilSerch']);
-//     }
-    
-// } 
-// else{
-
-// $sql = "SELECT * FROM `uploads_at` ORDER BY `timeAttack` ASC";
-// $data = getList($conn,$sql);
-// } 
-
 $filS = filter_input(INPUT_GET,'search');
 
 if($filS){
     $sql = "SELECT * FROM `uploads_at` WHERE `huntersName` LIKE CONCAT('%','".$filS."','%') ORDER BY `timeAttack` ASC";
 }
 else{
-    $sql = "SELECT * FROM `uploads_at` ORDER BY `timeAttack` ASC";  
+    $sql = "SELECT * FROM `uploads_at` 
+            INNER JOIN  `user` 
+            ON uploads_at.usersUid = user.usersUid 
+            ORDER BY `timeAttack` ASC";  
 }
 $data = getList($conn,$sql);
 
@@ -65,7 +49,7 @@ var_dump($sql);
                 
                        <tr class="<?php if( $num < 3 ){ echo ' no1'; }else{ echo 'over4'; }; ?><?php if($num %2 == 0){ echo ' first-td'; }else{ echo ' second-td'; } ?>" >                                               
                            <td class="<?php if( $num < 3 ){ echo ' td-1'; }else{ echo ' td-1-1'; }; ?> "><?php $num++; echo $num;?></td>
-                           <td class="td-2"><a href="Comment.php?content=<?php echo $val["recordId"]; ?>  " ><?php echo $val["huntersName"];?></a></td>
+                           <td class="td-2"><a><?php echo $val["accountName"];?></a><a href="Comment.php?content=<?php echo $val["recordId"]; ?>"><?php if( $num < 3 ){ echo '<img src="https://img.icons8.com/cotton/22/000000/external-link--v1.png"/>'; }else{ echo '<img src="https://img.icons8.com/cotton/20/000000/external-link--v1.png"/>';} ?></a></td>
                            <td class="td-3"><img class="weaponImage" src="<?php $vaWeaponsId = $val["weaponsId"];$reJud = judgePath($vaWeaponsId);echo $reJud ;?>"></td>
                            <td class="td-4"><?php echo date('i’s”',strtotime($val["timeAttack"]));?></td>
                        </tr>
@@ -98,8 +82,8 @@ var_dump($sql);
                         
                         <div class="selectdivWrapper">
                             <div class="selectdiv">
-                                  <select name="WeaponId" required>
-                                    <option hidden>武器を選択</option>
+                                  <select name="WeaponId" >
+                                    <option value="" hidden>武器を選択</option>
                                     <?php require_once 'inc/Weapon.inc.php'; ?>
                                   </select>
                             </div>
@@ -112,8 +96,8 @@ var_dump($sql);
                         
                         <div class="selectdivWrapper">
                             <div class="selectdiv">
-                                  <select name="upDate" required >
-                                    <option hidden>投稿日順</option>
+                                  <select name="upDate" >
+                                    <option value="" hidden >投稿日順</option>
                                     <option value="0">昇順</option>
                                     <option value="1">降順</option>
                                   </select>
@@ -127,6 +111,7 @@ var_dump($sql);
             </div>
         </div>
     </div>
+    <a href="https://icons8.com/icon/mJBPC3kRqGZd/外部リンク">外部リンク icon by Icons8</a>
 </main>
 <?php
    require_once 'template/footer.php';
