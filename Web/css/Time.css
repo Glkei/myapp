@@ -167,8 +167,9 @@ main{
     border: none;
 }
 
-table{
+.rank-list{
     /* border: none; */
+    border-collapse: collapse;
     border-spacing:0px;
     font-family: 'Roboto', sans-serif;
 }
@@ -230,12 +231,6 @@ th{
     padding-right: 30px;
 }
 
-/*115 312 278 282*/
-.over4 {
-    font-size: 50px ;
-    /* color:#fed30f; */
-    content: "#";
-}
 
 .td-1-1{
     width: 115px;
@@ -278,6 +273,14 @@ th{
     padding-right: 30px;
 }
 
+tr:hover {
+    /* background: rgb(61, 91, 121); */
+    background: rgb(158, 96, 96);
+}
+tr {
+    position: relative;
+}
+
 .no1{
     /* color:#fed30f; */
     font-size: 30px;
@@ -287,6 +290,20 @@ th{
 .over4{
     font-size: 20px;
     border: none;
+}
+
+.rowlink {
+	width: 0;
+	min-width: 0;
+	border: 0;
+}
+
+.rowlink a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
 .first-td{

@@ -46,10 +46,10 @@ var_dump($sql);
                          <th class="th-4">Time</th>
                        </tr>
                     <?php foreach($data as $val):?>
-                
-                       <tr class="<?php if( $num < 3 ){ echo ' no1'; }else{ echo 'over4'; }; ?><?php if($num %2 == 0){ echo ' first-td'; }else{ echo ' second-td'; } ?>" >                                               
-                           <td class="<?php if( $num < 3 ){ echo ' td-1'; }else{ echo ' td-1-1'; }; ?> "><?php $num++; echo $num;?></td>
-                           <td class="td-2"><a><?php echo $val["accountName"];?></a><a href="Comment.php?content=<?php echo $val["recordId"]; ?>"><?php if( $num < 3 ){ echo '<img src="https://img.icons8.com/cotton/22/000000/external-link--v1.png"/>'; }else{ echo '<img src="https://img.icons8.com/cotton/20/000000/external-link--v1.png"/>';} ?></a></td>
+
+                       <tr class="<?php if( $num < 3 ){ echo ' no1'; }else{ echo 'over4'; }; ?><?php if($num %2 == 0){ echo ' first-td'; }else{ echo ' second-td'; } ?>">                                            
+                           <td class="<?php if( $num < 3 ){ echo ' td-1'; }else{ echo ' td-1-1'; }; ?> rowlink"><?php $num++; echo $num;?><a href="Comment.php?content=<?php echo $val["recordId"]; ?>"></a></td>
+                           <td class="td-2"><a><?php echo $val["accountName"];?></a></td>
                            <td class="td-3"><img class="weaponImage" src="<?php $vaWeaponsId = $val["weaponsId"];$reJud = judgePath($vaWeaponsId);echo $reJud ;?>"></td>
                            <td class="td-4"><?php echo date('i’s”',strtotime($val["timeAttack"]));?></td>
                        </tr>
@@ -111,7 +111,6 @@ var_dump($sql);
             </div>
         </div>
     </div>
-    <a href="https://icons8.com/icon/mJBPC3kRqGZd/外部リンク">外部リンク icon by Icons8</a>
 </main>
 <?php
    require_once 'template/footer.php';
