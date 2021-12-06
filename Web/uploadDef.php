@@ -31,6 +31,16 @@
             <label for="floatingTextarea2"></label>
         </div>
 
+        <select multiple >
+            <option>Grumpy</option>
+            <option>Happy</option>
+            <option>Sleepy</option>
+            <option>Bashful</option>
+            <option>Sneezy</option>
+            <option>Dopey</option>
+            <option>Doc</option>
+        </select>
+
         <button type="submit" name="submit">投稿</button>
 
         </form>
