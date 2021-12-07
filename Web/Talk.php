@@ -1,15 +1,31 @@
 <?php
-  require_once 'template/header.php';
-  require_once 'inc/functions.inc.php';
-  require_once 'inc/dbh.inc.php';
-  $data = array();
-  $sql = 
-  "SELECT * FROM `uploads_talk` 
-   INNER JOIN  `user` 
-   ON uploads_talk.usersUid = user.usersUid
-   "; 
-  $data = getList($conn,$sql);
-  $num = 0;
+   require_once 'template/header.php';
+   require_once 'inc/functions.inc.php';
+   require_once 'inc/dbh.inc.php';
+   $data = array();
+  
+   $filS = filter_input(INPUT_GET,'search');
+
+   if($filS){
+      $sql = 
+      "SELECT * FROM `uploads_talk` 
+       INNER JOIN `user`
+       ON uploads_talk.usersUid = user.usersUid
+       WHERE `Title` 
+       LIKE CONCAT('%','".$filS."','%')
+       OR `Ditails` LIKE CONCAT('%','".$filS."','%')
+       OR `accountName` LIKE CONCAT('%','".$filS."','%')
+       OR `accountName` LIKE CONCAT('%','".$filS."','%')";
+   }
+   else{
+      $sql = "SELECT * FROM `uploads_talk` 
+              INNER JOIN  `user` 
+              ON uploads_talk.usersUid = user.usersUid ;" ;
+   }
+
+   $data = getList($conn,$sql);
+   $num = 0;
+   // var_dump($sql);
 ?>
 <!--HTML Code-->
 
@@ -23,12 +39,9 @@
 
    <div class="left-box">
 
-      <div class="box">
-          <form method="GET">
-              <input type="text" onmouseout="document.search.txt.value = ''" class="input" name="search" autocomplete="off" >
-          </form>
-          <i class="fas fa-search"></i>
-      </div>
+   <form method="GET">
+       <input type="search" name ="search" autocomplete="off">
+   </form>
 
       <a href="uploadTalk.php">投稿する</a>
    </div>

@@ -4,7 +4,7 @@
   require_once 'inc/dbh.inc.php';
   $data = array();
   
-$filS = filter_input(INPUT_GET,'search');
+  $filS = filter_input(INPUT_GET,'search');
 
 if($filS){
     $sql = "SELECT * FROM `uploads_at` WHERE `huntersName` LIKE CONCAT('%','".$filS."','%') ORDER BY `timeAttack` ASC";
