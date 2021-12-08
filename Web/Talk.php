@@ -25,7 +25,6 @@
 
    $data = getList($conn,$sql);
    $num = 0;
-   // var_dump($sql);
 ?>
 <!--HTML Code-->
 
@@ -39,11 +38,10 @@
 
    <div class="left-box">
 
-   <form method="GET">
-       <input type="search" name ="search" autocomplete="off">
-   </form>
+      <form method="GET">
+          <input type="search" name ="search" autocomplete="off">
+      </form>
 
-      <a href="uploadTalk.php">投稿する</a>
    </div>
 
    <div class="main-box">
@@ -53,14 +51,14 @@
                <div class="con-left">
                   <img src = "<?php echo $val["Content"];?>" width="auto" height="200px">
                </div>
-
+            
                <div class="con-right">
                   <div style="display:flex; text-align:center;">
                      <a href="CommentTalk.php?content=<?php echo $val["recordId"]; ?>"><h2><?php echo $val["Title"]; ?></h2></a>
                      <label><?php echo date('Y/m/d H:i:s ',strtotime($val["uploadDate"]));?></label>
                   </div>
                      <label><?php echo $val["Ditails"];?></label><br>
-                     <div style="display: inline-flex;">
+                  <div style="display: inline-flex;">
                      <p>投稿者</p>
                      <a href="" style="font-size:15px text-align:center;">:<?php echo $val["accountName"]; ?></h2></a>
                   </div>
@@ -71,7 +69,7 @@
    </div>
 
    <div class="right-box">
-
+   <a href="uploadTalk.php">投稿する</a>
       <?php ?>
    
    </div>
