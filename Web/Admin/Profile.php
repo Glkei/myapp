@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../css/style2.css">
     <title>プロフィール</title>
     <script src="../js/View.js"></script>
-    <script src="../js/test.js"></script>
+    <script src="../js/time.js"></script>
     <link rel="stylesheet" href="css/sweetalert2.css">
     <script src="js/sweetalert2.min.js"></script>
 </head>
@@ -33,11 +33,11 @@
 
     <div class="mainBox"> 
         <div class="form-wrapper">
-            <a href="EditProfile.php"><img src="https://img.icons8.com/dotty/40/000000/edit-file.png"/></a>
+            <a href="./EditProfile.php"><img src="https://img.icons8.com/dotty/40/000000/edit-file.png"/></a>
             
             <?php foreach($userData as $val):?>
-                <p>ユーザー名</p>
-                <p><?php echo $val["usersUid"];?></p>
+                <p>アカウント名</p>
+                <p><?php echo $val["accountName"];?></p>
                 <h1>アイコン画像</h1>
                 <img class="ViewImage" src="<?php if(empty($val["iconPath"])){echo '../img/noimage.png';}else{echo '../user/.userIMG/iconIMG/'.$val["iconPath"];}?>" alt="">
                 <h1>背景画像　</h1>
