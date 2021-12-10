@@ -60,7 +60,7 @@
                      <label><?php echo $val["Ditails"];?></label><br>
                   <div style="display: inline-flex;">
                      <p>投稿者</p>
-                     <a href="" style="font-size:15px text-align:center;">:<?php echo $val["accountName"]; ?></h2></a>
+                     <a href="" style="font-size:15px text-align:center;">:<?php echo $val["accountName"]; ?></a>
                   </div>
                </div>
 

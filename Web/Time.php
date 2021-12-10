@@ -55,7 +55,6 @@ var_dump($sql);
                        </tr>
 
                     <?php endforeach; ?>
-                       
                </table>
             </div>
         </div>
