@@ -40,7 +40,7 @@
                 <p><?php echo $val["accountName"];?></p>
                 <h1>アイコン画像</h1>
                 <img class="ViewImage" src="<?php if(empty($val["iconPath"])){echo '../img/noimage.png';}else{echo '../user/.userIMG/iconIMG/'.$val["iconPath"];}?>" alt="">
-                <h1>背景画像　</h1>
+                <h1>背景画像</h1>
                 <img src="<?php if(empty($val["backImgPath"])){echo 'https://img.icons8.com/ios-filled/50/000000/no-image.png';}else{echo '../user/.userIMG/backgroungIMG/'.$val["backImgPath"];}?>" alt="">
             <?php endforeach; ?>
 
