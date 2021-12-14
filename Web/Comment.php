@@ -10,7 +10,7 @@ $data = array();
 $sql = 
 "SELECT * FROM `uploads_at` 
  INNER JOIN  `user` 
- ON uploads_at.usersUid = user.usersUid
+ ON uploads_at.usersUid = user.usersUid 
  WHERE uploads_at.recordId = '".$reId."' ";
 
 $data = getList($conn,$sql);
