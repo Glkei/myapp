@@ -26,7 +26,7 @@ $IconfileName = '/'.$_FILES["IconImage"]['name'];//必須
 $BackImagetempFile = $_FILES["BackgroundImage"]['tmp_name'];//必須
 $BackImagefileName = '/'.$_FILES["BackgroundImage"]['name'];//必須
 
-if(!is_uploaded_file($IcontempFile) || !is_uploaded_file($BackImagetempFile)){//一時ファイルが出来ているか
+if(!is_uploaded_file($IcontempFile)){//一時ファイルが出来ているか
     header("location: ../uploadTalk.php?error=cannotmadeit");
     exit();
 }
