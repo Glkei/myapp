@@ -21,8 +21,12 @@ $sqll =
  INNER JOIN  `user` 
  ON comment_talk.usersUid = user.usersUid
  WHERE comment_talk.PostId = '".$reId."' ";
-
 $CommentData = getList($conn,$sqll);
+
+foreach ($data as $value) {
+    $Views = $value["WatchCount"] + 1;
+    InCount($conn,$Views,$reId);
+}
 
 ?>
 <head>
@@ -40,7 +44,7 @@ $CommentData = getList($conn,$sqll);
 
         <div class="ContentTitle">
             <h2><?php echo $val["Title"]; ?></h2>
-            <p>クリック回数：</p>
+            <p>クリック回数：<?php echo $val["WatchCount"]; ?></p>
             <div>
                 <img src="<?php echo $val["iconPath"]; ?>" style="max-width:100px">
                 <h2><a href="userProf.php?u=<?php echo $val["usersUid"] ;?>"><?php echo $val["accountName"]; ?></a></h2>

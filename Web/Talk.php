@@ -62,6 +62,7 @@
                      <p>投稿者</p>
                      <a href="" style="font-size:15px text-align:center;">:<?php echo $val["accountName"]; ?></a>
                   </div>
+                  <a >クリック:<?php echo $val["WatchCount"]; ?></a>
                </div>
 
             </div>

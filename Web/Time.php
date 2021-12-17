@@ -18,7 +18,6 @@ else{
 $data = getList($conn,$sql);
 
 $num = 0;
-var_dump($sql);
 
 ?>
 <head>

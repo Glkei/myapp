@@ -488,3 +488,14 @@ function uploadcommentTalk($conn,$Content,$userUid,$PostComment){
     header("location: ../CommentTalk.php?content=$Content&error=none");
     exit();
 }
+
+function InCount($conn,$Views,$reId){
+
+    $query=
+   "UPDATE `uploads_talk` 
+    SET `WatchCount` = '".$Views."'
+    WHERE uploads_talk.recordId = '".$reId."';";
+     
+    $result = mysqli_query($conn,$query);
+
+}
