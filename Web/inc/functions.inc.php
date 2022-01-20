@@ -287,6 +287,42 @@ function UploadTalk( $conn,$usersUid,$content_path,$title,$ditails ){
     exit();
 }
 
+function emptyInputKasanegi($content_path,$title,$head,$body,$arm,$weist,$foot){
+    $result = null;
+    if(empty($content_path) || empty($title) || empty($head) || empty($body) || empty($arm) || empty($weist) || empty($foot) ){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+
+function UploadKasanegi( $conn,$usersUid,$content_path,$title,$head,$body,$arm,$weist,$foot,$ditails ){
+    
+    if(!$conn){
+        echo "Filed";
+        header("location: ../Admin/uploadKasanegi.php?error=canotconnectit");
+        exit();
+    }
+
+    $query=
+    "INSERT 
+     INTO `uploads_kasanegi`( `usersUid`,`Content`, `Title`, `head`, `body`, `arm`, `weist`, `foot`, `Ditails`) 
+     VALUES ( '".$usersUid."','".$content_path."','".$title."','".$head."','".$body."','".$arm."','".$weist."','".$foot."','".$ditails."' );";
+     
+    $result = mysqli_query($conn,$query);
+
+    if(!$result){
+        header("location: ../Admin/uploadKasanegi.php?error=queryerror");
+        exit();
+    }
+
+    header("location: ../Admin/uploadKasanegi.php?error=none");
+    exit();
+
+}
+
 function viewName($conn,$valUid){
     if(!$conn){
         header("location: ../uploadTalk.php?error=cantconnected");
